@@ -158,8 +158,9 @@ class MarathonClient(object):
         """
         app.id = app_id
         data = app.to_json()
-        marathon.log.info('Create App data: %s', data)
-        print('Create App data: {}'.format(data))
+        marathon.log.info('TEST-TEST-TEST')
+        marathon.log.error('Create App data: {}'.format(data))
+        # print('Create App data: {}'.format(data))
         response = self._do_request('POST', '/v2/apps', data=data)
         if response.status_code == 201:
             return self._parse_response(response, MarathonApp)
