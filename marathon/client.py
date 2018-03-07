@@ -156,6 +156,7 @@ class MarathonClient(object):
         :returns: the created app (on success)
         :rtype: :class:`marathon.models.app.MarathonApp` or False
         """
+        raise ValueError("TEST-TEST-TEST")
         app.id = app_id
         data = app.to_json()
         marathon.log.info('TEST-TEST-TEST')
