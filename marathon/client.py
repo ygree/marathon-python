@@ -113,7 +113,7 @@ class MarathonClient(object):
             marathon.log.warn('Got HTTP {code}: {body}'.format(
                 code=response.status_code, body=response.text.encode('utf-8')))
         else:
-            marathon.log.debug('Got HTTP {code}: {body}'.format(
+            marathon.log.error('Got HTTP {code}: {body}'.format(
                 code=response.status_code, body=response.text.encode('utf-8')))
 
         return response
