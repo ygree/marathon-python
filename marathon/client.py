@@ -159,11 +159,12 @@ class MarathonClient(object):
         # raise ValueError("TEST-TEST-TEST") # YEAH: it gets here!!!
         app.id = app_id
         data = app.to_json()
-        marathon.log.error('TEST-TEST-TEST')
-        marathon.log.error('Create App data: {}'.format(data))
+        marathon.log.debug('TEST-TEST-TEST')
+        marathon.log.info('Create App data: {}'.format(data))
         # print('Create App data: {}'.format(data))
         response = self._do_request('POST', '/v2/apps', data=data)
         marathon.log.error('Create App response: {}'.format(response))
+        marathon.log.error('Create App parsed response: {}'.format(self._parse_response(response, MarathonApp)))
         if response.status_code == 201:
             return self._parse_response(response, MarathonApp)
         else:
